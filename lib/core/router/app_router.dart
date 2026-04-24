@@ -5,6 +5,8 @@ import 'app_routes.dart';
 import 'go_router_refresh_stream.dart';
 import '../auth/presentation/bloc/auth_bloc.dart';
 import '../auth/presentation/bloc/auth_state.dart';
+import '../security/app_role.dart';
+import '../security/security_manager.dart';
 
 @singleton
 class AppRouter {
@@ -26,6 +28,15 @@ class AppRouter {
         if (isAuthenticated && isLoginRoute) {
           return AppRoutes.home;
         }
+
+        // Security Base: Phase 11
+        if (authState is AuthAuthenticated && state.uri.path.startsWith('/admin')) {
+          final currentRole = AppRoleX.fromString(authState.token.role);
+          if (!SecurityManager.hasRole(currentRole, AppRole.admin)) {
+            return AppRoutes.home; // Fallback for unauthorized access
+          }
+        }
+
         return null;
       },
       routes: [
