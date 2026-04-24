@@ -14,6 +14,8 @@ Auto-generated from all feature plans. Last updated: 2026-04-25
 - Dart 3.x / Flutter 3.x + `flutter/material.dart`, Theme System (`AppColors`, `AppTheme`), State System (`BaseState`, `Failure`) (main)
 - Dart 3.x / Flutter 3.x + `flutter_bloc` (integrating with existing AuthBloc), `go_router` (main)
 - Inherits from Phase 6 (SecureStorage) (main)
+- Dart 3.x / Flutter 3.x + `lib/core` (exclusively utilizing existing core abstractions) (main)
+- N/A (Mocked via JSONPlaceholder public API) (main)
 
 - Dart 3.x / Flutter 3.x + `get_it`, `injectable`, `injectable_generator`, `build_runner` (main)
 
@@ -33,9 +35,9 @@ tests/
 Dart 3.x / Flutter 3.x: Follow standard conventions
 
 ## Recent Changes
+- main: Added Dart 3.x / Flutter 3.x + `lib/core` (exclusively utilizing existing core abstractions)
 - main: Added Dart 3.x / Flutter 3.x + `flutter_bloc` (integrating with existing AuthBloc), `go_router`
 - main: Added Dart 3.x / Flutter 3.x + `flutter/material.dart`, Theme System (`AppColors`, `AppTheme`), State System (`BaseState`, `Failure`)
-- main: Added Dart 3.x / Flutter 3.x + `flutter_bloc`
 
 
 <!-- MANUAL ADDITIONS START -->

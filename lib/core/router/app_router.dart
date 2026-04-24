@@ -7,6 +7,8 @@ import '../auth/presentation/bloc/auth_bloc.dart';
 import '../auth/presentation/bloc/auth_state.dart';
 import '../security/app_role.dart';
 import '../security/security_manager.dart';
+import '../widgets/app_button.dart';
+import '../../features/dummy/presentation/pages/dummy_page.dart';
 
 @singleton
 class AppRouter {
@@ -48,9 +50,19 @@ class AppRouter {
         ),
         GoRoute(
           path: AppRoutes.home,
-          builder: (context, state) => const Scaffold(
-            body: Center(child: Text('Home Screen')),
+          builder: (context, state) => Scaffold(
+            appBar: AppBar(title: const Text('Home Screen')),
+            body: Center(
+              child: AppButton(
+                text: 'Run Validation',
+                onPressed: () => context.push(AppRoutes.dummy),
+              ),
+            ),
           ),
+        ),
+        GoRoute(
+          path: AppRoutes.dummy,
+          builder: (context, state) => const DummyPage(),
         ),
       ],
     );
