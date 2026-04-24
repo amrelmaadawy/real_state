@@ -47,3 +47,8 @@ app.*.map.json
 # Specify and Claude related
 .specify/
 .claude/
+.specs/
+specs/
+tasks.md
+CorePlan.md
+
